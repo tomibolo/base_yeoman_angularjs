@@ -1,0 +1,28 @@
+<div class="header" ng-controller = "menuCtrl as menu" >
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="#/">yeoman</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+        <ul class="nav navbar-nav">
+          <li ng-class = "{active : menu.isActive('/')}"><a href="#/">Home</a></li>
+          <li ng-if="menu.isLogin()" ng-class = "{active : menu.isActive('/about')}"><a ng-href="#/about">About</a></li>
+          <li ng-if="menu.isLogin()" ng-class = "{active : menu.isActive('/usuarios')}"><a ng-href="#/usuarios">Usuarios</a></li>
+          <li ng-if="!menu.isLogin()" ng-class = "{active : menu.isActive('/login')}"><a ng-href="#/login">Login</a></li>
+          <li ng-if="menu.isLogin()"><a ng-click = "menu.logout()"  ng-href="#/">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
